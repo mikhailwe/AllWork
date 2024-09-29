@@ -21,6 +21,7 @@ public class hw7 {
         int midlesum = 0;
         for (int i = 0; i < array.length; i++) {
             sum = sum + array[i];
+        }
         midlesum = sum / array.length;
 
         System.out.println(midlesum);
@@ -31,6 +32,8 @@ public class hw7 {
         // 2 Задание.
 
         double[] array1 = {3.5, 5.2, -1.4, 7.8, 2.2};
+        double min = array1[0];
+        double max = array1[0];
         for (int i = 0; i < array1.length; i++) {
             if (array1[i] < min) {
                 min = array1[i];
