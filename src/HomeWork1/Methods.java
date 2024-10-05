@@ -7,8 +7,10 @@ public class Methods {
 
     }
 
-    /** Javadoc
+    /**
+     * Javadoc
      * Метод для вычисления квадрата из принимаемого числа из другого класса.
+     *
      * @param number тип переменной
      * @return возвращает корень числа int
      */
@@ -16,9 +18,10 @@ public class Methods {
         return number * number;
     }
 
-    /** Javadoc
+    /**
+     * Javadoc
      *
-     * @param name  тип переменной "Имя"
+     * @param name    тип переменной "Имя"
      * @param surname тип переменной "Фамилия"
      * @return
      */
@@ -27,13 +30,17 @@ public class Methods {
         return name + " " + surname;
     }
 
-    /** Javadoc
+    /**
+     * Javadoc
      *
      * @param word это массив строк (varargs).
      * @return это строка, представляющая массив с коротким и длинным словом.
      */
 
     static String cornerValuesArray(String... word) {
+        if (word.length == 0) {
+            return Arrays.toString(word);
+        }
         String longWord = word[0];
         String shortWord = word[0];
         for (String str : word) {
@@ -48,37 +55,46 @@ public class Methods {
         return Arrays.toString(shWordAndLoWord);
     }
 
-    /** Javadoc
+    /**
+     * Javadoc
      *
      * @param numbers varargs и тип переменной Numbers массив целых чисел, из которого будут рассчитаны минимальное и максимальное значения.
      * @return возвращает инт значение. строковое представление массива, содержащего минимальное и максимальное значения.
      */
 
     static String cornerValuesArray(int... numbers) {
-    int min = numbers[0];
-    int max = numbers[0];
-    for (int i=0; i<numbers.length; i++) {
-        if (numbers[i] < min) {
-            min = numbers[i];
+        if (numbers.length == 0) {
+            return Arrays.toString(numbers);
         }
-        if (numbers[i] > max) {
-            max = numbers[i];
+        int min = numbers[0];
+        int max = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
         }
-    }
-    int[] result = new int[]{min,max};
-    return Arrays.toString(result);
+        int[] result = new int[]{min, max};
+        return Arrays.toString(result);
     }
 
-    /** Javadoc
+    /**
+     * Javadoc
      * Находит минимальный и максимальный символы в заданном массиве символов.
+     *
      * @param word varargs и тип переменной
      * @return Строковое представление массива, содержащего минимальный и максимальный символы.
      */
 
     static String cornerValuesArray(char... word) {
+        if (word.length == 0) {
+            return Arrays.toString(word);
+        }
         char min = word[0];
         char max = word[0];
-        for (int i=0; i<word.length; i++) {
+        for (int i = 0; i < word.length; i++) {
             if (word[i] < min) {
                 min = word[i];
             }
@@ -86,7 +102,14 @@ public class Methods {
                 max = word[i];
             }
         }
-        char[] result1 = new char[]{min,max};
+        char[] result1 = new char[]{min, max};
         return Arrays.toString(result1);
+    }
+
+    static int factorial(int number) {
+        if (number == 1 || number == 0) {
+            return 1;
+        }
+        return number * factorial(number - 1);
     }
 }
