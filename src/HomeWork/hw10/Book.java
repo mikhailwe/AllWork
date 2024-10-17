@@ -5,10 +5,14 @@ private String title;
 private Author author;
 private Integer datePublication;
 
-    public Book(String title, Integer datePublication,Author author ) {
+    public Book(String title, Author author,Integer datePublication ) {
+        this.title = title;
         this.author = author;
         this.datePublication = datePublication;
-        this.title = title;
+
+    }
+    public Book() {
+
     }
 
     public Author getAuthor() {
@@ -35,8 +39,9 @@ private Integer datePublication;
         this.title = title;
     }
 
+    @Override
+    public String toString() {
+        return "Автор " + author + " Название книги " + title + " Дата публикации " + datePublication;
 
-    public String getBookInfo() {
-        return "Название книги - " + title + " Год публикации - " + datePublication + " Имя автора - " + author.getNameSurname();
     }
 }
