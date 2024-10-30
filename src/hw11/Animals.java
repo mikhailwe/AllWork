@@ -1,13 +1,10 @@
 package hw11;
 
-public class Animals {
+public abstract class Animals {
     private String name;
 
     public Animals(String name) {
         this.name = name;
-    }
-    public void makeSound(){
-        System.out.println("Животное издаёт звук");
     }
 
     public String getName() {
@@ -17,5 +14,8 @@ public class Animals {
     public void setName(String name) {
         this.name = name;
     }
+    public abstract void makeSound();
+    public abstract void move();
 
 }
+
