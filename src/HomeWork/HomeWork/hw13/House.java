@@ -1,4 +1,6 @@
-package hw13;
+package HomeWork.HomeWork.hw13;
+
+import java.util.Objects;
 
 public class House {
     private int floors;
@@ -46,6 +48,19 @@ public class House {
                 ", rooms=" + rooms +
                 ", hasGarage=" + hasGarage +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return floors == house.floors && rooms == house.rooms;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(floors, rooms, hasGarage);
     }
 }
 
