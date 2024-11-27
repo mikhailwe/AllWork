@@ -1,6 +1,7 @@
 package HomeWork.HomeWork.hw17;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class InvertMap {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class InvertMap {
     }
 
     public static HashMap<String, Integer> invertMap(HashMap<Integer, String> originalMap) {
-        HashMap<String, Integer> invertedMap = new HashMap<>();
+        HashMap<String, Integer> invertedMap = new LinkedHashMap<>();
         for (HashMap.Entry<Integer, String> entry : originalMap.entrySet()) {
             invertedMap.put(entry.getValue(), entry.getKey());
         }
