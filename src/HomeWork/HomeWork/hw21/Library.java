@@ -51,6 +51,15 @@ public class Library {
                 .stream()
                 .sorted(comparator)
                 .collect(Collectors.toList());
-
+    }
+    public Map <Boolean, List<Book>>getBookPartitionedByAvailability() {
+        return books.values()
+                .stream()
+                .collect(Collectors.partitioningBy(Book ::isAvailable));
+    }
+    public Map<String, List<Book>> getBookGroupedByAuthor() {
+        return books.values()
+                .stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
     }
 }
